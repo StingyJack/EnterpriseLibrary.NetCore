@@ -9,7 +9,7 @@
 // FITNESS FOR A PARTICULAR PURPOSE.
 //===============================================================================
 
-using Microsoft.Practices.ServiceLocation;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,6 +17,8 @@ using System.Linq;
 
 namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
 {
+    using CommonServiceLocator;
+
     /// <summary>
     /// Event arguments describing which sections have changed in a configuration source.
     /// </summary>
