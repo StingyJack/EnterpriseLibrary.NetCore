@@ -11,7 +11,7 @@
 
 using System;
 using System.Data.Common;
-using Microsoft.Practices.EnterpriseLibrary.Common.Properties;
+
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 
 namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Fluent
@@ -29,7 +29,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Fluent
     {
         public AnotherDatabaseConfigurationExtensions(IDatabaseConfigurationProviders context, string providerName) : base(context)
         {
-            if (String.IsNullOrEmpty(providerName)) throw new ArgumentException(Resources.ExceptionStringNullOrEmpty, "providerName");
+            if (String.IsNullOrEmpty(providerName)) throw new ArgumentNullException(nameof(providerName));
             ConnectionString.ProviderName = providerName;
         }
 

@@ -1,6 +1,6 @@
 ﻿//===============================================================================
 // Microsoft patterns & practices Enterprise Library
-// Data Access Application Block
+// Core
 //===============================================================================
 // Copyright © Microsoft Corporation.  All rights reserved.
 // THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY
@@ -9,17 +9,24 @@
 // FITNESS FOR A PARTICULAR PURPOSE.
 //===============================================================================
 
-using Microsoft.Practices.EnterpriseLibrary.Common;
-namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Fluent
-{
-    using Common.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Configuration;
 
-    ///<summary>
-    /// Extension point for database providers to connect to the data configuration fluent-api.
-    ///</summary>
-    /// <seealso cref="DataConfigurationSourceBuilderExtensions"/>
-    /// <seealso cref="DatabaseConfigurationExtension"/>
-    public interface IDatabaseConfigurationProviders : IFluentInterface
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
+{
+    /// <summary>
+    /// </summary>
+    public interface IProtectedConfigurationSource
     {
+        /// <summary>
+        /// </summary>
+        /// <param name="sectionName"></param>
+        /// <param name="configurationSection"></param>
+        /// <param name="protectionProviderName"></param>
+        void Add(string sectionName, ConfigurationSection configurationSection, string protectionProviderName);
+
+
     }
 }

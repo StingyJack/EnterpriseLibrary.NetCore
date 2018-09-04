@@ -108,7 +108,7 @@ namespace System.Data.Common
     //         <add name="SqlClient Data Provider"    invariant="System.Data.SqlClient"             support="1FF" description=".Net Framework Data Provider for SqlServer" type="System.Data.SqlClient.SqlClientFactory, System.Data, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%ECMA_PUBLICKEY%"/>
     //     </DbProviderFactories>
     // </system.data>
-    // this class is delayed created, use ConfigurationSettings.GetSection("system.data") to obtain
+    ///<summary>this class is delayed created, use ConfigurationSettings.GetSection("system.data") to obtain</summary> 
     public class DbProviderFactoriesConfigurationHandler : IConfigurationSectionHandler
     { // V1.2.3300
         internal const string sectionName = "system.data";
@@ -131,10 +131,12 @@ namespace System.Data.Common
         internal const string sqlclientPartialAssemblyQualifiedName = "System.Data.SqlClient.SqlClientFactory, System.Data,";
         internal const string oracleclientPartialAssemblyQualifiedName = "Oracle.ManagedDataAccess.Client.OracleClientFactory, Oracle.ManagedDataAccess.Client,";
 
+        /// <inheritdoc />
         public DbProviderFactoriesConfigurationHandler()
         { // V1.2.3300
         }
 
+        /// <inheritdoc />
         virtual public object Create(object parent, object configContext, XmlNode section)
         { // V1.2.3300
 #if DEBUG

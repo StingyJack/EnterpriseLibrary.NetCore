@@ -15,7 +15,8 @@ using Microsoft.Practices.EnterpriseLibrary.Common.Utility;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Fluent;
-using Microsoft.Practices.EnterpriseLibrary.Data.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Data.FromElCommon;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
 {
@@ -59,7 +60,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
             ///<returns></returns>
             public IDatabaseConfigurationProperties ForDatabaseNamed(string databaseName)
             {
-                if (string.IsNullOrEmpty(databaseName)) throw new ArgumentException(Properties.Resources.ExceptionStringNullOrEmpty, "databaseName");
+                if (string.IsNullOrEmpty(databaseName)) throw new ArgumentException(Resources.ExceptionStringNullOrEmpty, "databaseName");
 
                 ResetForNewDatabase(databaseName);
                 connectionStringSection.ConnectionStrings.Add(currentDatabaseConnectionInfo);
@@ -108,7 +109,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
             {
                 if (!typeof(Database).IsAssignableFrom(databaseType))
                 {
-                    throw new ArgumentException(Resources.ExceptionArgumentMustInheritFromDatabase, "databaseType");
+                    throw new ArgumentException(Data.Properties.Resources.ExceptionArgumentMustInheritFromDatabase, "databaseType");
                 }
 
                 currentProviderMapping.DatabaseType = databaseType;

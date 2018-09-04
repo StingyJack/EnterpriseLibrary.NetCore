@@ -1,6 +1,6 @@
 ﻿//===============================================================================
 // Microsoft patterns & practices Enterprise Library
-// Data Access Application Block
+// Core
 //===============================================================================
 // Copyright © Microsoft Corporation.  All rights reserved.
 // THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY
@@ -9,17 +9,16 @@
 // FITNESS FOR A PARTICULAR PURPOSE.
 //===============================================================================
 
-using Microsoft.Practices.EnterpriseLibrary.Common;
-namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Fluent
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
 {
-    using Common.Configuration;
-
-    ///<summary>
-    /// Extension point for database providers to connect to the data configuration fluent-api.
-    ///</summary>
-    /// <seealso cref="DataConfigurationSourceBuilderExtensions"/>
-    /// <seealso cref="DatabaseConfigurationExtension"/>
-    public interface IDatabaseConfigurationProviders : IFluentInterface
-    {
-    }
+	/// <summary>
+	/// Represents the abstraction of an object with a name.
+	/// </summary>
+	public interface IObjectWithName
+	{
+		/// <summary>
+		/// Gets the name.
+		/// </summary>
+		string Name { get; }
+	}
 }

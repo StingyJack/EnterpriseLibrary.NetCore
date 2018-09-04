@@ -14,7 +14,7 @@ using System.Configuration;
 using System.Data.Common;
 using System.Diagnostics;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.Common.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Data.FromElCommon;
 
 namespace Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Fluent
 {

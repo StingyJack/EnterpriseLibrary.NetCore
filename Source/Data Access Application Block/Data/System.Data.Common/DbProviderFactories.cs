@@ -7,6 +7,9 @@ using System.Text;
 
 namespace System.Data.Common
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class DbProviderFactories
     {
         private const string AssemblyQualifiedName = "AssemblyQualifiedName";
@@ -19,6 +22,11 @@ namespace System.Data.Common
         private static DataTable _providerTable;
         private static object _lockobj = new object();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="providerInvariantName"></param>
+        /// <returns></returns>
         static public DbProviderFactory GetFactory(string providerInvariantName)
         {
             ADP.CheckArgumentLength(providerInvariantName, "providerInvariantName");
@@ -44,6 +52,11 @@ namespace System.Data.Common
             throw ADP.ConfigProviderNotFound();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="providerRow"></param>
+        /// <returns></returns>
         static public DbProviderFactory GetFactory(DataRow providerRow)
         {
             ADP.CheckArgumentNull(providerRow, "providerRow");
@@ -93,6 +106,10 @@ namespace System.Data.Common
             throw ADP.ConfigProviderMissing();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         static public DataTable GetFactoryClasses()
         { // V1.2.3300
             // NOTES: Include the Framework Providers and any other Providers listed in the config file.
